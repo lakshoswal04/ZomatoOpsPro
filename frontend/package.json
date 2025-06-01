@@ -16,8 +16,8 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "react-app-rewired": "^2.2.1",
-    "customize-cra": "^1.0.0"
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.2.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
