@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom right, #f7f9fc, #edf2f7);
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.status-badge {
+  @apply px-2 py-1 rounded-full text-xs font-semibold;
+}
+
+.status-prep {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.status-picked {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.status-on-route {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.status-delivered {
+  @apply bg-green-100 text-green-800;
+}
+
+.order-card {
+  @apply border rounded-lg p-4 mb-4 shadow-sm hover:shadow-md transition-shadow bg-white;
+}
+
+.btn-primary {
+  @apply bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105;
+}
+
+.btn-success {
+  @apply bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105;
+}
+
+.btn-disabled {
+  @apply bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded-lg cursor-not-allowed;
+}
+
+/* New styles for enhanced UI */
+.page-container {
+  @apply container mx-auto px-4 py-8 max-w-7xl;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100;
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100;
+}
+
+.stat-card {
+  @apply bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:border-primary-200 transition-all duration-300;
+}
+
+.stat-card-primary {
+  @apply bg-gradient-to-br from-primary-50 to-white rounded-xl shadow-md p-4 border border-primary-100;
+}
+
+.stat-card-secondary {
+  @apply bg-gradient-to-br from-secondary-50 to-white rounded-xl shadow-md p-4 border border-secondary-100;
+}
+
+.stat-card-accent {
+  @apply bg-gradient-to-br from-accent-50 to-white rounded-xl shadow-md p-4 border border-accent-100;
+}
+
+.section-title {
+  @apply text-xl font-bold text-gray-800 mb-4 border-b pb-2 border-gray-200;
+}
+
+.dashboard-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+}
+
+/* Add these dark mode styles */
+@layer base {
+  body {
+    @apply transition-colors duration-200;
+  }
+  
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+  
+  .dark .card-gradient {
+    @apply bg-gradient-to-br from-gray-800 to-gray-900;
+  }
+  
+  .dark .order-card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .dark .btn-secondary {
+    @apply bg-gray-700 hover:bg-gray-600 text-gray-200;
+  }
+  
+  /* Form elements dark mode fixes */
+  .dark input, .dark select, .dark textarea {
+    @apply bg-gray-800 border-gray-700 text-gray-100;
+  }
+  
+  .dark label {
+    @apply text-gray-200;
+  }
+  
+  .dark .bg-white {
+    @apply bg-gray-800;
+  }
+  
+  .dark .text-gray-700, .dark .text-gray-800, .dark .text-gray-900 {
+    @apply text-gray-200;
+  }
+  
+  .dark .text-gray-600 {
+    @apply text-gray-300;
+  }
+  
+  .dark .border-gray-200 {
+    @apply border-gray-700;
+  }
+  
+  .dark .hover\:bg-gray-50:hover {
+    @apply hover:bg-gray-700;
+  }
+  
+  .dark .bg-gray-100 {
+    @apply bg-gray-700 text-gray-200;
+  }
+  
+  /* Improve accessibility */
+  button:focus, a:focus {
+    @apply outline-none ring-2 ring-primary-500 ring-opacity-50;
+  }
+  
+  .dark button:focus, .dark a:focus {
+    @apply ring-blue-400;
+  }
+}
