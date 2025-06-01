@@ -345,14 +345,14 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
   return (
     <div className="p-4">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-neutral-800">
-          <span className="text-primary-600">Orders</span> Management
+        <h2 className="text-2xl font-bold text-neutral-800 dark:text-white">
+          <span className="text-primary-600 dark:text-primary-400">Orders</span> Management
         </h2>
         <div className="text-sm text-neutral-500 dark:text-neutral-400">{new Date().toLocaleDateString()}</div>
       </div>
 
       {success && (
-        <div className="bg-accent-50 border border-accent-300 text-accent-700 px-4 py-3 rounded-lg mb-4 flex items-center">
+        <div className="bg-accent-50 dark:bg-accent-900/30 border border-accent-300 dark:border-accent-700 text-accent-700 dark:text-accent-300 px-4 py-3 rounded-lg mb-4 flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
           </svg>
@@ -361,7 +361,7 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
       )}
 
       {error && (
-        <div className="bg-primary-50 border border-primary-300 text-primary-700 px-4 py-3 rounded-lg mb-4 flex items-center">
+        <div className="bg-primary-50 dark:bg-primary-900/30 border border-primary-300 dark:border-primary-700 text-primary-700 dark:text-primary-300 px-4 py-3 rounded-lg mb-4 flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
           </svg>
@@ -395,7 +395,7 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
             </thead>
             <tbody>
               {orders && orders.length > 0 ? orders.map((order, index) => (
-                <tr key={order.orderId} className={`border-b border-neutral-100 dark:border-gray-700 ${index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-neutral-50 dark:bg-gray-750'} hover:bg-primary-50 dark:hover:bg-primary-900/20 transition duration-150`}>
+                <tr key={order.orderId} className={`border-b border-neutral-100 dark:border-gray-700 ${index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-neutral-50 dark:bg-gray-750'} hover:bg-primary-50 dark:hover:bg-gray-700 transition duration-150`}>
                   <td className="py-4 px-6 text-left">
                     <span className="font-medium text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-3 py-1 rounded-full text-sm">{order.orderId}</span>
                   </td>
@@ -613,12 +613,12 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
       {/* Modal for assigning delivery partner */}
       {selectedOrder && availablePartners && availablePartners.length > 0 && !newPrepTime && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-xl shadow-xl w-96 border border-neutral-100">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl w-96 border border-neutral-100 dark:border-gray-700">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-neutral-800">Assign Delivery Partner</h3>
+              <h3 className="text-lg font-semibold text-neutral-800 dark:text-white">Assign Delivery Partner</h3>
               <button 
                 onClick={() => setSelectedOrder(null)}
-                className="text-neutral-500 hover:text-neutral-700 transition-colors"
+                className="text-neutral-500 hover:text-neutral-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -627,10 +627,10 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
             </div>
             
             <div className="mb-5">
-              <label className="block text-neutral-700 text-sm font-medium mb-2">Select Delivery Partner</label>
+              <label className="block text-neutral-700 dark:text-gray-300 text-sm font-medium mb-2">Select Delivery Partner</label>
               <div className="relative">
                 <select
-                  className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 appearance-none text-neutral-800 bg-white"
+                  className="w-full px-4 py-2.5 border border-neutral-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 appearance-none text-neutral-800 dark:text-white bg-white dark:bg-gray-700"
                   value={selectedPartner}
                   onChange={(e) => setSelectedPartner(e.target.value)}
                 >
@@ -645,7 +645,7 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
                     );
                   })}
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-neutral-500">
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-neutral-500 dark:text-gray-400">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
@@ -659,13 +659,13 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
                   setSelectedOrder(null);
                   setSelectedPartner('');
                 }}
-                className="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-lg hover:bg-neutral-200 transition duration-150 font-medium text-sm"
+                className="px-4 py-2 bg-neutral-100 dark:bg-gray-700 text-neutral-700 dark:text-gray-300 rounded-lg hover:bg-neutral-200 dark:hover:bg-gray-600 transition duration-150 font-medium text-sm"
               >
                 Cancel
               </button>
               <button
                 onClick={() => handleAssignPartner(selectedOrder)}
-                className="px-4 py-2 bg-secondary-600 text-white rounded-lg hover:bg-secondary-700 transition duration-150 disabled:bg-neutral-300 disabled:text-neutral-500 font-medium text-sm flex items-center justify-center"
+                className="px-4 py-2 bg-secondary-600 text-white rounded-lg hover:bg-secondary-700 transition duration-150 disabled:bg-neutral-300 disabled:text-neutral-500 dark:disabled:bg-gray-600 dark:disabled:text-gray-400 font-medium text-sm flex items-center justify-center"
                 disabled={loading || !selectedPartner}
               >
                 {loading ? (
@@ -693,15 +693,15 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
       {/* Modal for updating prep time */}
       {selectedOrder && newPrepTime !== '' && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-xl shadow-xl w-96 border border-neutral-100">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl w-96 border border-neutral-100 dark:border-gray-700">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-neutral-800">Update Preparation Time</h3>
+              <h3 className="text-lg font-semibold text-neutral-800 dark:text-white">Update Preparation Time</h3>
               <button 
                 onClick={() => {
                   setSelectedOrder(null);
                   setNewPrepTime('');
                 }}
-                className="text-neutral-500 hover:text-neutral-700 transition-colors"
+                className="text-neutral-500 hover:text-neutral-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -710,17 +710,17 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
             </div>
             
             <div className="mb-5">
-              <label className="block text-neutral-700 text-sm font-medium mb-2">Preparation Time (minutes)</label>
+              <label className="block text-neutral-700 dark:text-gray-300 text-sm font-medium mb-2">Preparation Time (minutes)</label>
               <div className="relative">
                 <input
                   type="number"
-                  className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 text-neutral-800"
+                  className="w-full px-4 py-2.5 border border-neutral-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 text-neutral-800 dark:text-white bg-white dark:bg-gray-700"
                   value={newPrepTime}
                   onChange={(e) => setNewPrepTime(e.target.value)}
                   min="1"
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-neutral-400 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -733,13 +733,13 @@ const OrdersTable = ({ orders, userRole, onOrderUpdate, onRefresh }) => {
                   setSelectedOrder(null);
                   setNewPrepTime('');
                 }}
-                className="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-lg hover:bg-neutral-200 transition duration-150 font-medium text-sm"
+                className="px-4 py-2 bg-neutral-100 dark:bg-gray-700 text-neutral-700 dark:text-gray-300 rounded-lg hover:bg-neutral-200 dark:hover:bg-gray-600 transition duration-150 font-medium text-sm"
               >
                 Cancel
               </button>
               <button
                 onClick={() => handleUpdatePrepTime(selectedOrder)}
-                className="px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition duration-150 disabled:bg-neutral-300 disabled:text-neutral-500 font-medium text-sm flex items-center justify-center"
+                className="px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition duration-150 disabled:bg-neutral-300 disabled:text-neutral-500 dark:disabled:bg-gray-600 dark:disabled:text-gray-400 font-medium text-sm flex items-center justify-center"
                 disabled={loading || !newPrepTime || newPrepTime < 1}
               >
                 {loading ? (

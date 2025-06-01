@@ -72,12 +72,12 @@ const OrdersManagement = () => {
   }
   
   return (
-    <div className="page-container bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <div className="page-container bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center space-x-4">
           <Link 
             to="/manager" 
-            className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-2 rounded-lg transition duration-200 flex items-center mr-4"
+            className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-3 py-2 rounded-lg transition duration-200 flex items-center mr-4"
             aria-label="Back to Dashboard"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
@@ -85,7 +85,7 @@ const OrdersManagement = () => {
             </svg>
             Back to Dashboard
           </Link>
-          <h1 className="text-2xl font-bold text-gray-800">Order Management</h1>
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Order Management</h1>
         </div>
         
         <div className="flex items-center space-x-4">
