@@ -1,7 +1,10 @@
-const { override, addWebpackResolve, addWebpackAlias } = require('customize-cra');
+const { override, addWebpackResolve, addWebpackAlias, disableEsLint } = require('customize-cra');
 const path = require('path');
 
 module.exports = override(
+  // Disable the built-in ESLint to avoid conflicts
+  disableEsLint(),
+  
   // Add .jsx extension to the list of resolvable extensions
   addWebpackResolve({
     extensions: ['.js', '.jsx', '.json']
