@@ -2,8 +2,10 @@ import axios from 'axios';
 
 // Create an axios instance with default config
 const api = axios.create({
-  // The backend routes are prefixed with /api
-  baseURL: '/api',
+  // Use the relative path for development and absolute for production
+  baseURL: process.env.NODE_ENV === 'production' 
+    ? 'https://zomatoopspro.onrender.com'
+    : '/api',
   headers: {
     'Content-Type': 'application/json'
   }
