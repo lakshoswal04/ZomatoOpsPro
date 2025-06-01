@@ -15,6 +15,10 @@
     "tailwindcss": "^3.3.1",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1",
+    "customize-cra": "^1.0.0"
+  },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
