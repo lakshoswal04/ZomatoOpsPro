@@ -4,7 +4,7 @@ import axios from 'axios';
 const api = axios.create({
   // Use the relative path for development and absolute for production
   baseURL: process.env.NODE_ENV === 'production' 
-    ? 'https://zomatoopspro.onrender.com'
+    ? '/api'  // Use relative path with Netlify redirects
     : '/api',
   headers: {
     'Content-Type': 'application/json'

@@ -93,7 +93,14 @@ io.on('connection', (socket) => {
 app.set('io', io);
 
 // Middleware
-app.use(cors());
+// Remove this line
+// app.use(cors());
+
+// Keep only this specific CORS configuration
+app.use(cors({
+  origin: ['https://zomato-ops-pro2.netlify.app', 'http://localhost:3000'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Connect to MongoDB
