@@ -6,6 +6,9 @@ Overview
 
 Zomato Ops Pro is a comprehensive logistics management system designed to streamline the coordination between restaurant managers and delivery partners. The platform enables restaurant managers to create orders, assign delivery partners, and track order status in real-time. Delivery partners can view their assigned orders, update order status, and toggle their availability.
 
+Deployment Link
+-https://zomato-ops-pro2.netlify.app/
+
 Features
 
 For Restaurant Managers
@@ -28,9 +31,6 @@ For Delivery Partners
 
 - ![image](https://github.com/user-attachments/assets/c2d08057-c8cc-4484-8d8b-0355df76ec79)
 - ![image](https://github.com/user-attachments/assets/9e7e4881-605a-454e-96e4-3d5bdc30d5cb)
-
-
-
 
 
 Tech Stack
