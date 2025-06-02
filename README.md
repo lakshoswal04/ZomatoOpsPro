@@ -9,6 +9,9 @@ Zomato Ops Pro is a comprehensive logistics management system designed to stream
 Deployment Link
 -https://zomato-ops-pro2.netlify.app/
 
+Video Link
+-https://drive.google.com/file/d/1LjN1yhbi2F8m5xL78dAcfhGiF4Wj9KBV/view?usp=sharing
+
 Features
 
 For Restaurant Managers
